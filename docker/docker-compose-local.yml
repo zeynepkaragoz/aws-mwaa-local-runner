@@ -30,8 +30,11 @@ services:
       - "${PWD}/plugins:/usr/local/airflow/plugins"
       - "${PWD}/requirements:/usr/local/airflow/requirements"
       - "${PWD}/startup_script:/usr/local/airflow/startup"
+      - "${PWD}/cbioportal-core:/usr/local/airflow/cbioportal-core/"
+      - "${PWD}/study_es_0_mini:/usr/local/airflow/study_es_0_mini/"
+      - "${PWD}/portal_info:/usr/local/airflow/portal_info/"
     ports:
-      - "8080:8080"
+      - "9090:8080"
     command: local-runner
     healthcheck:
       test: ["CMD-SHELL", "[ -f /usr/local/airflow/airflow-webserver.pid ]"]

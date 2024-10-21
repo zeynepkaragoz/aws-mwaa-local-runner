@@ -29,5 +29,5 @@ services:
       - "${PWD}/plugins:/usr/local/airflow/plugins"
       - "${PWD}/requirements:/usr/local/airflow/requirements"
     ports:
-      - "8080:8080"
+      - "9090:8080"
     command: resetdb
